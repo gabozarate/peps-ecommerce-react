@@ -1,20 +1,23 @@
 
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import HomeBtn from '../HomeBtn/HomeBtn'
+import HomeBtn from './HomeBtn/HomeBtn'
+import CartWid from './CartWidget/CartWid'
 
 
 export const NavBar = () => {
   return (
     <>
       <NavContainer>
-        <h2>MANJULA</h2>
+        <h2 href="/">MANJULA</h2>
         <div>
-          <a href="/">Home</a>
           <a href="/">Shop</a>
           <a href="/">Sales</a>
           <a href="/">Contact</a>
           <a href="/">About</a>
+        </div>
+        <div className='cart' href="/">
+        <CartWid/>
         </div>
         <div className='Hbtn'>
           <HomeBtn />
@@ -28,12 +31,33 @@ export const NavBar = () => {
 export default NavBar
 
 const NavContainer = styled.nav`
-h2{
+.cart{
   color: rgb(228, 209, 146);
-  font-size: 2em;
+}
+.cart:hover{
+  cursor: pointer;
+  color: #AF7AB3;
+  transition: 400ms ease;
+}
+h2{
+  margin: 0.5rem;
+  padding: 0.5rem;
+  color: rgb(228, 209, 146);
+  border: #80558C 0.5px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 3.5em;
   font-weight: 600;
 }
-padding: 2rem;
+h2:hover{
+  cursor: pointer;
+  border: #AF7AB3;
+  border-radius: 20px;
+  color: rgb(228, 198, 99);
+  background-color: #af7ab336;
+  box-shadow: 0px 10px 10px 1px #814bbb;
+  transition: 800ms ease;
+}
+padding: 1rem;
 background-color: #80558C;
 display: flex;
 align-items: center;
@@ -43,7 +67,7 @@ a{
   color:rgb(228, 209, 146);
   font-size: 1.5em;
   text-decoration: none;
-  margin-right: 1rem;
+  margin-right: 2rem;
 }
 a:hover{
   color: #AF7AB3;
