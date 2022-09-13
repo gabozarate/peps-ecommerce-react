@@ -1,19 +1,27 @@
-import React from 'react'
+import {useState, useEffect} from 'react'
 import styled from 'styled-components'
+import { ItemCount } from '../components/ItemCount/ItemCount'
+
 
 const ItemListContainer = ({ greeting }) => {
+
+
   return (
+    <>
     <TitleContainer>
       <h1>{greeting}</h1>
     </TitleContainer>
+    <ItemCount initial={1} stock={5} onAdd={()=>{}}/> 
+    </>
   )
 }
 
 export default ItemListContainer
+
 const TitleContainer = styled.nav`
   h1{
     display: inline-block;
-    margin-left: 9.8em ;
+    margin-left: 8.8em ;
     padding-left: 1rem;
     padding-right: 1rem;
     align-items: center;
