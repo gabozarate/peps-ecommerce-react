@@ -9,7 +9,7 @@ export const NavBar = () => {
   return (
     <>
       <NavContainer>
-        <h2 href="/">MANJULA</h2>
+        <h2 href="/">Pep`s</h2>
         <div>
           <a href="/">Shop</a>
           <a href="/">Sales</a>
@@ -32,19 +32,24 @@ export default NavBar
 
 const NavContainer = styled.nav`
 .cart{
-  color: rgb(228, 209, 146);
+  color: #F6E7D8;
+  border-radius: 10px;
+
 }
 .cart:hover{
   cursor: pointer;
-  color: #AF7AB3;
+  color: #874356;
   transition: 400ms ease;
 }
 h2{
   margin: 0.5rem;
   padding: 0.5rem;
-  color: rgb(228, 209, 146);
-  border: #80558C 0.5px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #874356;
+  border: #F5F0BB;
+  border-radius: 20px;
+  background-color: #F6E7D8;
+  box-shadow: 0px 3px 5px 1px #874356;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: 3.5em;
   font-weight: 600;
 }
@@ -52,25 +57,26 @@ h2:hover{
   cursor: pointer;
   border: #AF7AB3;
   border-radius: 20px;
-  color: rgb(228, 198, 99);
+  color: #F6E7D8;
   background-color: #af7ab336;
-  box-shadow: 0px 10px 10px 1px #814bbb;
+  box-shadow: 0px 3px 5px 1px #F6E7D8;
   transition: 800ms ease;
 }
 padding: 1rem;
-background-color: #80558C;
+background-color: #C65D7B;
 display: flex;
+flex-direction: row;
 align-items: center;
 justify-content: space-between;
 
 a{
-  color:rgb(228, 209, 146);
+  color: #F6E7D8;
   font-size: 1.5em;
   text-decoration: none;
   margin-right: 2rem;
 }
 a:hover{
-  color: #AF7AB3;
+  color: #874356;
   transition: 400ms ease;
 }
 .links{
@@ -98,24 +104,10 @@ a:hover{
       display: block;
     }
   }
-.links.active{
-  width: 100%;
-    display: block;
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    top: 30%;
-    left: 0;
-    right: 0;
-    text-align: center;
-    a{
-      font-size: 2rem;
-      margin-top: 1rem;
-      color: white;
-    }
-  }
+
 .Hbtn{
   @media(min-width: 768px){
+    color: #F5F0BB;
       display: none;
     }
   }
