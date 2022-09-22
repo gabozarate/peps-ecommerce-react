@@ -2,7 +2,7 @@ import { useState } from "react"
 import { Styled } from "styled-components"
 
 
-const ItemCount = ({ initial, stock, onAdd }) => {
+export const ItemCount = ({ initial, stock, onAdd }) => {
 
     const [count, setCount] = useState(initial)
 
@@ -19,4 +19,4 @@ const ItemCount = ({ initial, stock, onAdd }) => {
     )
 }
 
-export { ItemCount } 
+export default ItemCount 

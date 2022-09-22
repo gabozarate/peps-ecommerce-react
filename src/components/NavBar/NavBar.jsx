@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import HomeBtn from './HomeBtn/HomeBtn'
 import CartWid from './CartWidget/CartWid'
-
+import { Link, NavLink } from 'react-router-dom'
 
 export const NavBar = () => {
   return (
@@ -11,10 +11,10 @@ export const NavBar = () => {
       <NavContainer>
         <h2 href="/">Pep`s</h2>
         <div>
-          <a href="/">Shop</a>
-          <a href="/">Sales</a>
-          <a href="/">Contact</a>
-          <a href="/">About</a>
+          <Link to={"/"}>Arrivals</Link>
+          <Link to={"/"}>Sales</Link>
+          <Link to={"/"}>Men</Link>
+          <Link to={"/"}>Women</Link>
         </div>
         <div className='cart' href="/">
         <CartWid/>

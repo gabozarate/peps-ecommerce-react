@@ -1,10 +1,8 @@
 import styled from "styled-components"
+// import { ItemCount } from "../ItemCount/ItemCount";
 
+export const ItemDetail = ({product}) =>{
 
-
-
-const Item = ({product}) =>{
-    console.log(product)
     return (
        <>
        <Card>
@@ -13,15 +11,16 @@ const Item = ({product}) =>{
        <h3>{product.size}</h3>
        <h3>{product.price}</h3>
        <h4>Disponibles: {product.stock}</h4>
-       <button> ↧ VER MAS ↧</button>
        </Card>
        </>
     )
 }
-export {Item}
+
+export default ItemDetail
 
 const Card = styled.div`
 margin: 10px;
+width: 70%;
 padding: 0.5rem;
 display: flex;
 flex-direction: column;
