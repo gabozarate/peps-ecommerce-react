@@ -5,6 +5,7 @@ export const products = [
         product:"Adi2000",
         size:"38(ARG) - 8(US)",
         category:"ADIDAS",
+        description: "Zapatillas urbanas que se adaptan a cualquier estilo, te mantienen en contacto con la naturaleza incorporando materiales reciclados y a la vez, su estilo renovando de la década de los 90, te entrega un look insuperable. La entresuela de espuma y la suela tipo Wafle, combina con corcho y goma para darte mejor tracción a la hora de recorrer la ciudad. Se incorpora la unidad AirMax visible que amortigua cada paso dándote una experiencia única sin importar donde vayas. Este calzado se convirtió en un must de esta temporada y encaja perfecto en cualquier plan super casual, o elegante sport. Si todavía no las tenés, estás perdiendote muchos planes."  ,
         price:`$32.000`,
         stock:2,
         sale: "no"
@@ -15,6 +16,7 @@ export const products = [
         product:"Bad Bunny Forum Low Pink (Easter Egg) -Replica-",
         size:"40 (ARG) 8.5(US)",
         category:"ADIDAS",
+        description: "Zapatillas urbanas que se adaptan a cualquier estilo, te mantienen en contacto con la naturaleza incorporando materiales reciclados y a la vez, su estilo renovando de la década de los 90, te entrega un look insuperable. La entresuela de espuma y la suela tipo Wafle, combina con corcho y goma para darte mejor tracción a la hora de recorrer la ciudad. Se incorpora la unidad AirMax visible que amortigua cada paso dándote una experiencia única sin importar donde vayas. Este calzado se convirtió en un must de esta temporada y encaja perfecto en cualquier plan super casual, o elegante sport. Si todavía no las tenés, estás perdiendote muchos planes." ,
         price:`$25.000`,
         stock:2,
         sale: "si"
@@ -25,6 +27,7 @@ export const products = [
         product:"Pure Wnt (Doo)",
         size:"42(ARG) - 9.5(US) ",
         category:"DC",
+        description: "Zapatillas urbanas que se adaptan a cualquier estilo, te mantienen en contacto con la naturaleza incorporando materiales reciclados y a la vez, su estilo renovando de la década de los 90, te entrega un look insuperable. La entresuela de espuma y la suela tipo Wafle, combina con corcho y goma para darte mejor tracción a la hora de recorrer la ciudad. Se incorpora la unidad AirMax visible que amortigua cada paso dándote una experiencia única sin importar donde vayas. Este calzado se convirtió en un must de esta temporada y encaja perfecto en cualquier plan super casual, o elegante sport. Si todavía no las tenés, estás perdiendote muchos planes."  ,
         price:`$23.000`,
         stock:3,
         sale: "si"
@@ -35,6 +38,7 @@ export const products = [
         product:"550 woman",
         size:"37 (ARG) - 7.5 (US)",
         category:"New Balance",
+        description: "Zapatillas urbanas que se adaptan a cualquier estilo, te mantienen en contacto con la naturaleza incorporando materiales reciclados y a la vez, su estilo renovando de la década de los 90, te entrega un look insuperable. La entresuela de espuma y la suela tipo Wafle, combina con corcho y goma para darte mejor tracción a la hora de recorrer la ciudad. Se incorpora la unidad AirMax visible que amortigua cada paso dándote una experiencia única sin importar donde vayas. Este calzado se convirtió en un must de esta temporada y encaja perfecto en cualquier plan super casual, o elegante sport. Si todavía no las tenés, estás perdiendote muchos planes."  ,
         price:`$22.000`,
         stock:4,
         sale: "no"
@@ -45,6 +49,7 @@ export const products = [
         product:"DUNK Low Court Cheetah",
         size:"41 (ARG) - 9 (US)",
         category:"NIKE",
+        description: "Zapatillas urbanas que se adaptan a cualquier estilo, te mantienen en contacto con la naturaleza incorporando materiales reciclados y a la vez, su estilo renovando de la década de los 90, te entrega un look insuperable. La entresuela de espuma y la suela tipo Wafle, combina con corcho y goma para darte mejor tracción a la hora de recorrer la ciudad. Se incorpora la unidad AirMax visible que amortigua cada paso dándote una experiencia única sin importar donde vayas. Este calzado se convirtió en un must de esta temporada y encaja perfecto en cualquier plan super casual, o elegante sport. Si todavía no las tenés, estás perdiendote muchos planes."  ,
         price:`$27.000`,
         stock:4,
         sale: "no" 
@@ -55,6 +60,7 @@ export const products = [
         product:"DUNK Low Court DISRUPT 2",
         size:"43 (ARG) - 10.5 (US)",
         category:"NIKE",
+        description: "Zapatillas urbanas que se adaptan a cualquier estilo, te mantienen en contacto con la naturaleza incorporando materiales reciclados y a la vez, su estilo renovando de la década de los 90, te entrega un look insuperable. La entresuela de espuma y la suela tipo Wafle, combina con corcho y goma para darte mejor tracción a la hora de recorrer la ciudad. Se incorpora la unidad AirMax visible que amortigua cada paso dándote una experiencia única sin importar donde vayas. Este calzado se convirtió en un must de esta temporada y encaja perfecto en cualquier plan super casual, o elegante sport. Si todavía no las tenés, estás perdiendote muchos planes."  ,
         price:`$29.000`,
         stock:1,
         sale: "no"
@@ -65,6 +71,7 @@ export const products = [
         product:"DUNK Low Court TRUCK IT",
         size:"42 (ARG) - 10.5 (US)",
         category:"NIKE",
+        description:"Zapatillas urbanas que se adaptan a cualquier estilo, te mantienen en contacto con la naturaleza incorporando materiales reciclados y a la vez, su estilo renovando de la década de los 90, te entrega un look insuperable. La entresuela de espuma y la suela tipo Wafle, combina con corcho y goma para darte mejor tracción a la hora de recorrer la ciudad. Se incorpora la unidad AirMax visible que amortigua cada paso dándote una experiencia única sin importar donde vayas. Este calzado se convirtió en un must de esta temporada y encaja perfecto en cualquier plan super casual, o elegante sport. Si todavía no las tenés, estás perdiendote muchos planes." ,
         price:`$32.000`,
         stock:4,
         sale: "no"
@@ -75,6 +82,7 @@ export const products = [
         product:"KOSMO RIDER ",
         size:"37.5 (ARG) - 7.5(US)",
         category:"PUMA",
+        description: "Zapatillas urbanas que se adaptan a cualquier estilo, te mantienen en contacto con la naturaleza incorporando materiales reciclados y a la vez, su estilo renovando de la década de los 90, te entrega un look insuperable. La entresuela de espuma y la suela tipo Wafle, combina con corcho y goma para darte mejor tracción a la hora de recorrer la ciudad. Se incorpora la unidad AirMax visible que amortigua cada paso dándote una experiencia única sin importar donde vayas. Este calzado se convirtió en un must de esta temporada y encaja perfecto en cualquier plan super casual, o elegante sport. Si todavía no las tenés, estás perdiendote muchos planes."  ,
         price:`$24.000`,
         stock:3,
         sale: "no"

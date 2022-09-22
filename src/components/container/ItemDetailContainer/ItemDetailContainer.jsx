@@ -4,16 +4,23 @@ import { products } from '../../../assests/products'
 import { ItemDetail } from '../../ItemDetail/ItemDetail';
 import { Spinner } from '../../spinner/spinner';
 import  styled  from 'styled-components';
-import { customFetch } from '../../../assests/utils/customFetch';
+
 
 const ItemDetailContainer = () => {
-
+ 
+  const getItem = () => {
+    return new Promise ((resolve, reject) => {
+        setTimeout(()=>{
+        resolve(products[1])
+        }, 2000)
+    })
+}
 
 const [product, setProduct] = useState ([]);
 const [loading, setLoading] = useState({});
 
 useEffect(() => {
-  customFetch(products)
+ getItem(products[1])
     .then((res) => {
     setProduct(res);
     setLoading(false);
