@@ -13,10 +13,10 @@ export const ItemDetail = ({product}) =>{
                 <h3>{product.size}</h3>
                 <h3>{product.price}</h3>
                 <h4>Disponibles: {product.stock}</h4>
-                <h4>{product.description}</h4>
+                
                 <ItemCount/>
         </Details>
-        
+        <h4>{product.description}</h4>
        </CardDetail>
        </>
     )
@@ -26,12 +26,12 @@ export default ItemDetail
 
 
 const CardDetail = styled.div`
-margin: 10px;
+margin: auto;
 width: 70%;
 min-height: 20rem;
 padding: 0.5rem;
 display: flex;
-flex-direction: row;
+flex-direction: column;
 align-items: center;
 text-align: center;
 background-image: url(https://images.unsplash.com/photo-1603513492128-ba7bc9b3e143?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=786&q=80);
@@ -46,24 +46,30 @@ img{
     border: #874356 3px solid;
     border-radius: 20px;
 }
+img:hover{
+    box-shadow: 0px 5px 10px 1px #F68989;
+    transform: scale(1.2);
+    transition: 400ms ease;
+}
 
 h2{
     margin-top: 0.2rem;
     margin-bottom: 0.5rem;
-    padding: 1rem;
+    padding: 0.2rem;
     color: #F6E7D8;
     background-color: #C65D7B;
-    font-size: 1em;
+    font-size: 1.5em;
 
 }
 h3{
     margin: 0.2rem;
     margin-bottom: 1rem;
     font-size:2em ;
+    text-decoration: #874356 underline;
 }
 h4{
     margin: 0.2rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 button{
     margin: 2rem;
@@ -84,6 +90,6 @@ button:hover{
 const Details = styled.div`
 margin: auto;
 padding: 1rem;
-width: 50%;
+width: 70%;
 
 `
