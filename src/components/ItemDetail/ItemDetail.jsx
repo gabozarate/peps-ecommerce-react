@@ -1,23 +1,42 @@
+import {useState, useEffect} from 'react'
+import { useParams } from "react-router-dom"; 
 import styled from "styled-components"
+import { customFetch } from '../../assests/utils/customFetch'
 import { ItemCount } from "../ItemCount/ItemCount";
+import { products } from '../../assests/products'
 
-export const ItemDetail = ({product}) =>{
+export const ItemDetail = () =>{
+    let {IdProduc} = useParams()
+    console.log(IdProduc)
+    const [product, setProduct] = useState({});
+    const [loading, setLoading] = useState(true)
+    useEffect(() => {
+        customFetch(products, IdProduc)
+          .then(res => {
+            setProduct(res);
+            setLoading(false)
+          })
+      }, [])
 
     return (
        <>
-       <CardDetail>
-         <img className="cardImg" src={product.image} />
-        <Details>
-                <h2><h2 className="prodNameD">{product.category}</h2> </h2>
-                <h2 className="prodNameD">{product.product}</h2>
-                <h3>{product.size}</h3>
-                <h3>{product.price}</h3>
-                <h4>Disponibles: {product.stock}</h4>
-                
-                <ItemCount/>
-        </Details>
-        <h4>{product.description}</h4>
-       </CardDetail>
+       {
+        loading ? "." : 
+        <CardDetail>
+        <img className="cardImg" src={product.image} />
+       <Details>
+               <h2><h2 className="prodNameD">{product.brand}</h2> </h2>
+               <h2 className="prodNameD">{product.product}</h2>
+               <h3>{product.size}</h3>
+               <h3>{product.price}</h3>
+               <h4>Disponibles: {product.stock}</h4>
+               
+               <ItemCount/>
+       </Details>
+       <h4>{product.description}</h4>
+      </CardDetail>  
+       }
+     
        </>
     )
 }

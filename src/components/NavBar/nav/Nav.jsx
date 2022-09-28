@@ -2,23 +2,17 @@ import { style } from '@mui/system'
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
-const categorias = [
-    {id: 0, nombre: 'arrivals', ruta:'/categoria/destacados'},
-    {id: 1, nombre: 'on sale', ruta:'/categoria/sales'},
-    {id: 2, nombre: 'men', ruta:'/categoria/men'},
-    {id: 3, nombre: 'women', ruta:'/categoria/women'}
-];
 
-const Nav = ({categorias}) => {
+
+const Nav = ({ categories }) => {
   return (
     <nav>
-        {categorias.map((categoria) => {
-            return <Link>key={categoria.id} style={StyleSheet.links} to={categoria.ruta} > {categoria.nombre}  </Link>
-        })}
-
-        )
+      {categories.map((category) => {
+        return <NavLink key={category.id} style={StyleSheet.links} to={category.ruta}>{category.nombre} </NavLink>
+      })}
     </nav>
   );
 };
 
 export default Nav
+

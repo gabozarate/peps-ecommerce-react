@@ -1,10 +1,15 @@
+import { Link } from "react-router-dom"
 import styled from "styled-components"
-
+import ItemDetail from "../ItemDetail/ItemDetail"
 
 
 
 const Item = ({product}) =>{
-    console.log(product)
+    const handleClick = (product) => {
+        //console.log(product)
+        <ItemDetail product = {product} />
+    }
+    //console.log(product)
     return (
        <>
        <Card>
@@ -13,7 +18,7 @@ const Item = ({product}) =>{
        <h3>{product.size}</h3>
        <h3>{product.price}</h3>
        <h4>Disponibles: {product.stock}</h4>
-       <button> ↧ VER MAS ↧</button>
+       <Link to={`/product/${product.id}`} element ={<ItemDetail/>}> ↧ VER MAS ↧</Link>
        </Card>
        </>
     )

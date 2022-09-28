@@ -1,7 +1,13 @@
-export const customFetch = (products) => {
+export const customFetch = (products, id) => {
     return new Promise ((resolve, reject) => {
         setTimeout(()=>{
-        resolve(products)
+            if (id){
+                const product = products.find((prod) => prod.id == id)
+                resolve (product)
+            } else {         
+                resolve(products)
+            }
         }, 2000)
     })
 }
+

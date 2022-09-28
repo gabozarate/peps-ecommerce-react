@@ -4,9 +4,12 @@ import { ItemList } from '../components/ItemList'
 import { products } from '../assests/products'
 import { customFetch } from '../assests/utils/customFetch'
 import { Spinner } from '../components/spinner/spinner'
+import { useParams } from 'react-router-dom'
+
 
 
 const ItemListContainer = ({ greeting }) => {
+
 
   const [listProducts, setListProduts] = useState([])
   const [loading, setLoading] = useState(true)

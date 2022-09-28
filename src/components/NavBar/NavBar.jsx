@@ -1,27 +1,32 @@
 
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import HomeBtn from './HomeBtn/HomeBtn'
+// import HomeBtn from './HomeBtn/HomeBtn'
 import CartWid from './CartWidget/CartWid'
 import { Link, NavLink } from 'react-router-dom'
+import Nav from './nav/Nav'
 
 export const NavBar = () => {
+
+  const categories = [
+    { id: 0, nombre: 'arrivals', ruta: '/categories/arrivals' },
+    { id: 1, nombre: 'on sale', ruta: '/categories/on sale' },
+    { id: 2, nombre: 'men', ruta: '/categories/men' },
+    { id: 3, nombre: 'women', ruta: '/categories/women' }
+  ];
   return (
     <>
       <NavContainer>
-        <h2 href="/">Pep`s</h2>
-        <div>
-          <Link to={"/"}>Arrivals</Link>
-          <Link to={"/"}>Sales</Link>
-          <Link to={"/"}>Men</Link>
-          <Link to={"/"}>Women</Link>
-        </div>
-        <div className='cart' href="/">
-        <CartWid/>
-        </div>
-        <div className='Hbtn'>
+        <Link to={'/'}>
+          <h2 >Pep`s</h2>
+        </Link>
+          <Nav categories={categories} />
+        <Link to={'/cart'}>
+          <CartWid/>
+        </Link>
+        {/* <div className='Hbtn'>
           <HomeBtn />
-        </div>
+        </div> */}
       </NavContainer>
 
     </>
