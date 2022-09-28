@@ -18,7 +18,7 @@ const Item = ({product}) =>{
        <h3>{product.size}</h3>
        <h3>{product.price}</h3>
        <h4>Disponibles: {product.stock}</h4>
-       <Link to={`/product/${product.id}`} element ={<ItemDetail/>}> ↧ VER MAS ↧</Link>
+       <Link className="Link" to={`/product/${product.id}`} element ={<ItemDetail/>}>DETALLES</Link>
        </Card>
        </>
     )
@@ -26,6 +26,8 @@ const Item = ({product}) =>{
 export {Item}
 
 const Card = styled.div`
+max-width: 70%;
+min-width: 20%;
 margin: 10px;
 padding: 0.5rem;
 display: flex;
@@ -62,15 +64,17 @@ h3{
 h4{
     margin: 0.2rem;
 }
-button{
+.Link{
     margin: 2rem;
     width: 40%;
-    height: 2rem;
     border: #874356 2px solid;
     background-color: #C65D7B;
     color: #F6E7D8;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: small;
+    text-decoration: none;
 }
-button:hover{
+.Link:hover{
     cursor: pointer;
     background-color: #874356;
     box-shadow: 0px 5px 10px 1px #F68989;

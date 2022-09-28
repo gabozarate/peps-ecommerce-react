@@ -10,6 +10,7 @@ import { useParams } from 'react-router-dom'
 
 const ItemListContainer = ({ greeting }) => {
 
+  let { IdCateg } = useParams ();
 
   const [listProducts, setListProduts] = useState([])
   const [loading, setLoading] = useState(true)
@@ -19,8 +20,17 @@ const ItemListContainer = ({ greeting }) => {
       .then(res => {
         setListProduts(res);
         setLoading(false)
+        if (IdCateg) {
+         const categories = products.filter(products => products.category === IdCateg)
+         setListProduts (categories)
+        }
+         else {
+          setListProduts (products)
+        }
+        // setListProduts(res);
+        // setLoading(false)
       })
-  }, [])
+  }, [IdCateg])
 
   return (
     <>

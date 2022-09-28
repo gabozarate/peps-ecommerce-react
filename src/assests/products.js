@@ -40,7 +40,7 @@ export const products = [
         image: "https://www.kicksonfire.com/wp-content/uploads/2022/08/bbw550wp-nb-05-i.jpg?x58464",
         product:"550 woman",
         size:"37 (ARG) - 7.5 (US)",
-        category:"woman",
+        category:"women",
         brand:"NEW BALANCE",
         description: "Zapatillas urbanas que se adaptan a cualquier estilo, te mantienen en contacto con la naturaleza incorporando materiales reciclados y a la vez, su estilo renovando de la década de los 90, te entrega un look insuperable. La entresuela de espuma y la suela tipo Wafle, combina con corcho y goma para darte mejor tracción a la hora de recorrer la ciudad. Se incorpora la unidad AirMax visible que amortigua cada paso dándote una experiencia única sin importar donde vayas. Este calzado se convirtió en un must de esta temporada y encaja perfecto en cualquier plan super casual, o elegante sport. Si todavía no las tenés, estás perdiendote muchos planes."  ,
         price:`$22.000`,
