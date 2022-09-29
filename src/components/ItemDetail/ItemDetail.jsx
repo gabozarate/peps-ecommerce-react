@@ -1,13 +1,20 @@
 import {useState, useEffect} from 'react'
-import { useParams } from "react-router-dom"; 
+import { Link, useParams } from "react-router-dom"; 
 import styled from "styled-components"
 import { customFetch } from '../../assests/utils/customFetch'
 import { ItemCount } from "../ItemCount/ItemCount";
 import { products } from '../../assests/products'
 
+
 export const ItemDetail = () =>{
+  const onAdd = () => {
+    setgoToCart(true)
+    
+  }
+    const [goToCart, setgoToCart] = useState (false)
+
     let {IdProduc} = useParams()
-    console.log(IdProduc)
+    
     const [product, setProduct] = useState({});
     const [loading, setLoading] = useState(true)
     useEffect(() => {
@@ -30,8 +37,12 @@ export const ItemDetail = () =>{
                <h3>{product.size}</h3>
                <h3>{product.price}</h3>
                <h4>Disponibles: {product.stock}</h4>
+               {
+                    goToCart
+                        ? <><Link className='Link'  to={'/cart'}>Finalizar Compra</Link><Link className='Link' to={'/'}>Seguir Comprando</Link></>
+                        : <ItemCount initial={1} stock={product.stock} onAdd={onAdd} />
+               }
                
-               <ItemCount/>
        </Details>
        <h4>{product.description}</h4>
       </CardDetail>  
@@ -89,21 +100,27 @@ h3{
 h4{
     margin: 0.2rem;
     margin-top: 1rem;
+    margin-bottom: 1.5rem;
 }
-button{
-    margin: 2rem;
-    width: 40%;
-    height: 2rem;
-    border: #874356 2px solid;
+.Link{
+    margin-right: 1rem;
+    margin-left: 1rem;
+    padding: 3px;
     background-color: #C65D7B;
-    color: #F6E7D8;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 25%;
+    height: 10%;
+    font-size: 1rem; 
+    text-decoration: none;
+    color: white;
 }
-button:hover{
-    cursor: pointer;
+.Link:hover{
     background-color: #874356;
-    box-shadow: 0px 5px 10px 1px #F68989;
-    transition: 400ms ease ;
+    box-shadow: 0px 1px 5px 1px #F68989;
+    transition: 400ms ease;
 }
+
 `
 
 const Details = styled.div`

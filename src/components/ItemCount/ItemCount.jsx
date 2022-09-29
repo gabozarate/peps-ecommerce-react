@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
 import  styled  from "styled-components"
 
 
@@ -14,7 +15,7 @@ export const ItemCount = ({ initial, stock, onAdd }) => {
             <button disabled={count === initial} onClick={()=>decrease()}>-</button>
             <h3>{count}</h3>
             <button disabled={count === stock} onClick={()=>increase()}>+</button>
-            <button>AGREGAR</button>
+            <button  className="Link" disabled={stock <= 0} onClick={()=> onAdd(count)}>AGREGAR</button>
         </ItemCountCnt>
     )
 }
@@ -22,18 +23,41 @@ export const ItemCount = ({ initial, stock, onAdd }) => {
 export default ItemCount 
 
 const ItemCountCnt = styled.div`
+margin-left: 14rem;
+margin-top: 3rem;
 display: flex;
-flex-direction: row;
+align-items: center;
+
 button{
+    margin-right: 1rem;
     padding: 3px;
     border-radius: 10px;
-    min-width: 20%;
-    font-size: 0.7rem;
+    width: 10%;
+    font-size: 1rem;
+    border: #874356 2px solid;
+    background-color: #C65D7B;
+    color: #F6E7D8;
 }
 button:hover{
-    transform: scale(1.1);
+    cursor: pointer;
+    background-color: #874356;
+    box-shadow: 0px 1px 5px 1px #F68989;
     transition: 400ms ease;
 }
-
-
+.Link{
+    padding: 3px;
+    background-color: #C65D7B;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 25%;
+    height: 10%;
+    font-size: 1rem; 
+    text-decoration: none;
+    color: white;
+}
+.Link:hover{
+    background-color: #874356;
+    box-shadow: 0px 1px 5px 1px #F68989;
+    transition: 400ms ease;
+}
 `

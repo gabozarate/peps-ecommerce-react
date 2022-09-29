@@ -5,11 +5,7 @@ import ItemDetail from "../ItemDetail/ItemDetail"
 
 
 const Item = ({product}) =>{
-    const handleClick = (product) => {
-        //console.log(product)
-        <ItemDetail product = {product} />
-    }
-    //console.log(product)
+    
     return (
        <>
        <Card>

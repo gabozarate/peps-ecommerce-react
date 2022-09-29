@@ -6,7 +6,7 @@ import Cart from "./components/container/ItemDetailContainer/CartView/Cart"
 
 
 const App = () => {
-  const welcomeTxt = 'CATÁLOGO'
+  const welcomeTxt = 'destacados'
   return (
     <>
       <BrowserRouter>
