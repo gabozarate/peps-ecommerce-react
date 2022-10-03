@@ -8,9 +8,10 @@ import { useParams } from 'react-router-dom'
 
 
 
+
 const ItemListContainer = ({ greeting }) => {
 
-  let { IdCateg } = useParams ();
+  let { IdCateg } = useParams();
 
   const [listProducts, setListProduts] = useState([])
   const [loading, setLoading] = useState(true)
@@ -21,11 +22,11 @@ const ItemListContainer = ({ greeting }) => {
         setListProduts(res);
         setLoading(false)
         if (IdCateg) {
-         const categories = products.filter(products => products.category === IdCateg)
-         setListProduts (categories)
+          const categories = products.filter(products => products.category === IdCateg)
+          setListProduts(categories)
         }
-         else {
-          setListProduts (products)
+        else {
+          setListProduts(products)
         }
         // setListProduts(res);
         // setLoading(false)
@@ -40,12 +41,13 @@ const ItemListContainer = ({ greeting }) => {
       </TitleContainer>
       <ItemsCont>
         {
-        loading  ?
-        <Spinner/> 
-        :  
-        <ItemList listproducts={listProducts} />
+          loading ?
+            <Spinner />
+            :
+            <ItemList listproducts={listProducts} />
         }
       </ItemsCont>
+
 
     </>
   )
@@ -55,13 +57,16 @@ export default ItemListContainer
 
 const TitleContainer = styled.nav`
   h1{
-    display: inline-block;
-    margin-left: 10.5em ;
+    display: flex;
+    width: 30%;
+    height: 3rem;
+    margin: auto;  
+    margin-top  :1rem ;
     padding-left: 1rem;
     padding-right: 1rem;
     align-items: center;
     justify-content: center;
-    font-size: 3.5em;
+    font-size: 2em;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: #874356;
     background-image: url(https://images.unsplash.com/photo-1555181937-efe4e074a301?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80);
@@ -69,7 +74,7 @@ const TitleContainer = styled.nav`
     border-radius: 20px;
     box-shadow: 0px 5px 10px 1px #F68989;
   }
-  background-image: url(https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80);
+ 
 `
 const ItemsCont = styled.div`
     display: grid;
@@ -79,7 +84,7 @@ const ItemsCont = styled.div`
     justify-content: center;
     margin: auto;
     padding: 2rem;
-    background-image: url(https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80);
+   
     background-size: cover repeat none;
   
 `

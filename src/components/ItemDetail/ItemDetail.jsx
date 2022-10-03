@@ -1,54 +1,59 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useContext} from 'react'
 import { Link, useParams } from "react-router-dom"; 
 import styled from "styled-components"
 import { customFetch } from '../../assests/utils/customFetch'
 import { ItemCount } from "../ItemCount/ItemCount";
 import { products } from '../../assests/products'
+import { Context } from '../Context/CustomContainer';
 
 
 export const ItemDetail = () =>{
-  const onAdd = () => {
-    setgoToCart(true)
-    
-  }
-    const [goToCart, setgoToCart] = useState (false)
 
-    let {IdProduc} = useParams()
-    
+    const { addItem } = useContext(Context);
+
+    const onAdd = (count) => {
+        setgoToCart(true)
+            addItem(product, count);
+    };
+
+    const [goToCart, setgoToCart] = useState(false)
+
+    let { IdProduc } = useParams()
+
     const [product, setProduct] = useState({});
     const [loading, setLoading] = useState(true)
     useEffect(() => {
         customFetch(products, IdProduc)
-          .then(res => {
-            setProduct(res);
-            setLoading(false)
-          })
-      }, [])
+            .then(res => {
+                setProduct(res);
+                setLoading(false)
+            })
+    }, [])
 
     return (
-       <>
-       {
-        loading ? "." : 
-        <CardDetail>
-        <img className="cardImg" src={product.image} />
-       <Details>
-               <h2><h2 className="prodNameD">{product.brand}</h2> </h2>
-               <h2 className="prodNameD">{product.product}</h2>
-               <h3>{product.size}</h3>
-               <h3>{product.price}</h3>
-               <h4>Disponibles: {product.stock}</h4>
-               {
-                    goToCart
-                        ? <><Link className='Link'  to={'/cart'}>Finalizar Compra</Link><Link className='Link' to={'/'}>Seguir Comprando</Link></>
-                        : <ItemCount initial={1} stock={product.stock} onAdd={onAdd} />
-               }
-               
-       </Details>
-       <h4>{product.description}</h4>
-      </CardDetail>  
-       }
-     
-       </>
+        <>
+            {
+                loading ? "." :
+                    <CardDetail>
+                        <img className="cardImg" src={product.image} />
+                        <Details>
+                            <h2><h2 className="prodNameD">{product.brand}</h2> </h2>
+                            <h2 className="prodNameD">{product.product}</h2>
+                            <h3>{product.size}</h3>
+                            <h3>{product.price}</h3>
+                            <h4>Disponibles: {product.stock}</h4>
+                            {
+                                goToCart
+                                    ? <><Link className='Link' to={'/cart'}>Finalizar Compra</Link><Link className='Link' to={'/'}>Seguir Comprando</Link></>
+                                    : <ItemCount initial={1} stock={product.stock} onAdd={onAdd} />
+                            }
+
+                        </Details>
+                        <h4>{product.description}</h4>
+                    </CardDetail>
+            }
+
+        </>
     )
 }
 

@@ -13,8 +13,9 @@ export const Spinner = () => {
 
 const SpinnerCont = styled.div`
 h1{
-    display: inline-block;
-    margin-left: 22em ;
+    display: flex;
+    width: 40%;
+    margin: auto;
     padding-left: 1rem;
     padding-right: 1rem;
     align-items: center;
