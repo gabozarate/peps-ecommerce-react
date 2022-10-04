@@ -12,10 +12,12 @@ export const ItemCount = ({ initial, stock, onAdd }) => {
 
     return (
         <ItemCountCnt>
-            <button disabled={count === initial} onClick={()=>decrease()}>-</button>
-            <h3>{count}</h3>
-            <button disabled={count === stock} onClick={()=>increase()}>+</button>
-            <button  className="Link" disabled={stock <= 0} onClick={()=> onAdd(count)}>AGREGAR</button>
+            <h3>Agregar: {count}</h3>
+            <div className="btns">
+                <button disabled={count === initial} onClick={() => decrease()}>-</button>
+                <button disabled={count === stock} onClick={() => increase()}>+</button>
+                <button className="Link" disabled={stock <= 0} onClick={() => onAdd(count)}>COMPRAR</button>
+            </div>
         </ItemCountCnt>
     )
 }
@@ -23,17 +25,22 @@ export const ItemCount = ({ initial, stock, onAdd }) => {
 export default ItemCount 
 
 const ItemCountCnt = styled.div`
-margin-left: 14rem;
+margin:auto;
 margin-top: 3rem;
 display: flex;
+flex-direction: column;
 align-items: center;
 
+.btns{
+    display: flex;
+    flex-direction: row;
 button{
     margin-right: 1rem;
-    padding: 3px;
+    padding-left: 1rem;
+    padding-right: 1rem;
     border-radius: 10px;
-    width: 10%;
-    font-size: 1rem;
+    width: 100%;
+    font-size: 0.8rem;
     border: #874356 2px solid;
     background-color: #C65D7B;
     color: #F6E7D8;
@@ -45,13 +52,13 @@ button:hover{
     transition: 400ms ease;
 }
 .Link{
-    padding: 3px;
+    padding: 0.5rem;
     background-color: #C65D7B;
     border: 1px solid black;
     border-radius: 10px;
-    width: 25%;
+    width: 100%;
     height: 10%;
-    font-size: 1rem; 
+    font-size: 0.8rem; 
     text-decoration: none;
     color: white;
 }
@@ -60,4 +67,10 @@ button:hover{
     box-shadow: 0px 1px 5px 1px #F68989;
     transition: 400ms ease;
 }
+}
+h3{
+    margin: auto;
+    margin-bottom: 1rem;
+}
+
 `

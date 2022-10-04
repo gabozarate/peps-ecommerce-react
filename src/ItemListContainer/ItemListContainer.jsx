@@ -28,8 +28,6 @@ const ItemListContainer = ({ greeting }) => {
         else {
           setListProduts(products)
         }
-        // setListProduts(res);
-        // setLoading(false)
       })
   }, [IdCateg])
 
@@ -83,8 +81,8 @@ const ItemsCont = styled.div`
     grid-template-rows: auto;
     justify-content: center;
     margin: auto;
-    padding: 2rem;
+    padding: 5rem;
    
-    background-size: cover repeat none;
+    
   
 `

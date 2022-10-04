@@ -22,9 +22,10 @@ const Item = ({product}) =>{
 export {Item}
 
 const Card = styled.div`
-max-width: 70%;
+max-width: 100%;
 min-width: 20%;
-margin: 10px;
+margin-right: 0.1rem;
+margin-bottom: 0.5rem;
 padding: 0.5rem;
 display: flex;
 flex-direction: column;
@@ -39,9 +40,9 @@ background-image: url(https://images.unsplash.com/photo-1555181937-efe4e074a301?
 }
 img{
 
-    margin: 1rem;
-    width: 95%;
-    max-height: 20rem;
+    margin-bottom: 1rem;
+    width: 90%;
+    max-height: 60%;
     border: #874356 3px solid;
     border-radius: 20px;
 }
@@ -51,7 +52,7 @@ h2{
     padding: 1rem;
     color: #F6E7D8;
     background-color: #C65D7B;
-    font-size: 1.5em;
+    font-size: 1.2em;
 
 }
 h3{
@@ -62,8 +63,10 @@ h4{
 }
 .Link{
     margin: 2rem;
+    padding: 0.5rem;
     width: 40%;
     border: #874356 2px solid;
+    border-radius: 10px;
     background-color: #C65D7B;
     color: #F6E7D8;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;

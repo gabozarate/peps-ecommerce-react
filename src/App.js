@@ -3,7 +3,7 @@ import ItemDetailContainer from "./components/container/ItemDetailContainer/Item
 import NavBar from "./components/NavBar/NavBar"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Cart from "./components/container/ItemDetailContainer/CartView/Cart"
-import { CustomProvider } from "./components/Context/CustomContainer"
+import { CartProvider } from "./components/Context/CartContext"
 
 
 const App = () => {
@@ -11,7 +11,7 @@ const App = () => {
   const dash = `hasta 3 cuotas sin interés`
   return (
     <>
-      <CustomProvider>
+      <CartProvider>
         <BrowserRouter>
           <NavBar />
           <Routes>
@@ -21,7 +21,7 @@ const App = () => {
             <Route path='/cart' element={<Cart />} />
           </Routes>
         </BrowserRouter>
-      </CustomProvider>
+      </CartProvider>
     </>
   );
 };

@@ -4,17 +4,18 @@ import styled from "styled-components"
 import { customFetch } from '../../assests/utils/customFetch'
 import { ItemCount } from "../ItemCount/ItemCount";
 import { products } from '../../assests/products'
-import { Context } from '../Context/CustomContainer';
+import { CartContext } from '../Context/CartContext';
 
 
 export const ItemDetail = () =>{
 
-    const { addItem } = useContext(Context);
+    const { cart, addItem } = useContext(CartContext);
 
-    const onAdd = (count) => {
+    const onAdd = (quantity) => {
+        addItem(product, quantity);
         setgoToCart(true)
-            addItem(product, count);
     };
+    console.log(cart)
 
     const [goToCart, setgoToCart] = useState(false)
 
@@ -35,7 +36,7 @@ export const ItemDetail = () =>{
             {
                 loading ? "." :
                     <CardDetail>
-                        <img className="cardImg" src={product.image} />
+                            <img className="cardImg" src={product.image} />
                         <Details>
                             <h2><h2 className="prodNameD">{product.brand}</h2> </h2>
                             <h2 className="prodNameD">{product.product}</h2>
@@ -48,8 +49,8 @@ export const ItemDetail = () =>{
                                     : <ItemCount initial={1} stock={product.stock} onAdd={onAdd} />
                             }
 
-                        </Details>
                         <h4>{product.description}</h4>
+                        </Details>
                     </CardDetail>
             }
 
@@ -64,9 +65,9 @@ const CardDetail = styled.div`
 margin: auto;
 width: 70%;
 min-height: 20rem;
-padding: 0.5rem;
+padding: 3rem;
 display: flex;
-flex-direction: column;
+flex-direction: row;
 align-items: center;
 text-align: center;
 background-image: url(https://images.unsplash.com/photo-1603513492128-ba7bc9b3e143?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=786&q=80);
@@ -75,9 +76,9 @@ background-image: url(https://images.unsplash.com/photo-1603513492128-ba7bc9b3e1
     font-family: sans-serif;
 }
 img{
-     margin: 1rem;
-    width: 50%;
-    min-height: 20rem;
+    margin-right: 1rem;
+    width: 40%;
+    min-height: 20%;
     border: #874356 3px solid;
     border-radius: 20px;
 }
@@ -93,19 +94,20 @@ h2{
     padding: 0.2rem;
     color: #F6E7D8;
     background-color: #C65D7B;
-    font-size: 1.5em;
+    font-size: 1em;
 
 }
 h3{
     margin: 0.2rem;
     margin-bottom: 1rem;
-    font-size:2em ;
+    font-size:1.2em ;
     text-decoration: #874356 underline;
 }
 h4{
     margin: 0.2rem;
     margin-top: 1rem;
     margin-bottom: 1.5rem;
+    font-size: 0.8em;
 }
 .Link{
     margin-right: 1rem;
