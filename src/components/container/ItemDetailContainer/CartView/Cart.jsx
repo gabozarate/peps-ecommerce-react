@@ -27,10 +27,17 @@ export const Cart = () => {
               </CartInfo>
        </CardDetail>
       )}
+      {
+        cart.length === 0 ?
+        <EmptyCart>
+        <h1> NO HAY PRODUCTOS AGREGADOS</h1>
+        </EmptyCart>
+        : 
         <TotalInfo>
                 <h2>Precio total: ${totalPrice()}</h2>
                 <button onClick={clear}>VACIAR CARRITO</button>
         </TotalInfo>
+      }
     </>
   )
 }
@@ -110,11 +117,20 @@ button:hover{
 const TotalInfo = styled.div`
 display: flex;
 flex-direction: column;
-width: 40%;
+width: 50%;
 margin: auto;
+margin-top: 3rem;
+margin-bottom: 5rem;
+padding: 1rem;
 align-items: center;
+text-align: center;
+border: #874356 3px solid;
+border-radius: 10px;
+background-image: url(https://images.unsplash.com/photo-1603513492128-ba7bc9b3e143?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=786&q=80);
+
 
 h2{
+  width: 50%;
   padding-left: 1rem;
   padding-right: 2rem;
   color: #F6E7D8;
@@ -140,3 +156,21 @@ button:hover{
     transition: 400ms ease;
 }
 `
+
+const EmptyCart = styled.div`
+display: flex;
+flex-direction: column;
+width: 40%;
+margin: auto;
+align-items: center;
+h1{
+  margin-top: 15rem;
+  padding-left: 1rem;
+  padding-right: 2rem;
+  font-size: 2rem;
+  text-align: center;
+  color: #F6E7D8;
+  background-color: #C65D7B;
+  border: #874356 2px solid ;
+  border-radius: 10px;
+}`
