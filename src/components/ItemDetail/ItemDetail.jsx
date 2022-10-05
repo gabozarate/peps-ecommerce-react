@@ -15,7 +15,7 @@ export const ItemDetail = () =>{
         addItem(product, quantity);
         setgoToCart(true)
     };
-    console.log(cart)
+   
 
     const [goToCart, setgoToCart] = useState(false)
 
@@ -41,7 +41,7 @@ export const ItemDetail = () =>{
                             <h2><h2 className="prodNameD">{product.brand}</h2> </h2>
                             <h2 className="prodNameD">{product.product}</h2>
                             <h3>{product.size}</h3>
-                            <h3>{product.price}</h3>
+                            <h3>${product.price}</h3>
                             <h4>Disponibles: {product.stock}</h4>
                             {
                                 goToCart

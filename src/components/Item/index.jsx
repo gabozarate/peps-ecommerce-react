@@ -12,7 +12,7 @@ const Item = ({product}) =>{
        <img className="cardImg" src={product.image} />
        <h2 className="prodName">{product.product}</h2>
        <h3>{product.size}</h3>
-       <h3>{product.price}</h3>
+       <h3>${product.price}</h3>
        <h4>Disponibles: {product.stock}</h4>
        <Link className="Link" to={`/product/${product.id}`} element ={<ItemDetail/>}>DETALLES</Link>
        </Card>
