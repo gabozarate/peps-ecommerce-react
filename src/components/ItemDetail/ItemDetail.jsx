@@ -2,39 +2,26 @@ import {useState, useEffect, useContext} from 'react'
 import { Link, useParams } from "react-router-dom"; 
 import styled from "styled-components"
 import { customFetch } from '../../assests/utils/customFetch'
-import { ItemCount } from "../ItemCount/ItemCount";
+import { ItemCount } from "../ItemCount/ItemCount"
 import { products } from '../../assests/products'
 import { CartContext } from '../Context/CartContext';
 
 
-export const ItemDetail = () =>{
-
+export const ItemDetail = ({product}) =>{
+    
     const { cart, addItem } = useContext(CartContext);
 
     const onAdd = (quantity) => {
         addItem(product, quantity);
         setgoToCart(true)
     };
-   
 
     const [goToCart, setgoToCart] = useState(false)
-
-    let { IdProduc } = useParams()
-
-    const [product, setProduct] = useState({});
-    const [loading, setLoading] = useState(true)
-    useEffect(() => {
-        customFetch(products, IdProduc)
-            .then(res => {
-                setProduct(res);
-                setLoading(false)
-            })
-    }, [])
+    
 
     return (
         <>
             {
-                loading ? "." :
                     <CardDetail>
                             <img className="cardImg" src={product.image} />
                         <Details>

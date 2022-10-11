@@ -3,40 +3,50 @@ import { useState, useEffect } from 'react'
 import { products } from '../../../assests/products'
 import { ItemDetail } from '../../ItemDetail/ItemDetail';
 import { Spinner } from '../../spinner/spinner';
-import  styled  from 'styled-components';
+import styled from 'styled-components';
+import { db } from '../../firebase/firebase';
+import { getDoc, doc, collection } from "firebase/firestore";
+import { useParams } from 'react-router-dom';
 
 
 const ItemDetailContainer = () => {
- 
-  const getItem = () => {
-    return new Promise ((resolve, reject) => {
-        setTimeout(()=>{
-        resolve(products[1])
-        }, 2000)
-    })
-}
 
-const [product, setProduct] = useState ([]);
-const [loading, setLoading] = useState({});
+  const { IdProduc } = useParams();
+  const [product, setProduct] = useState({});
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
-useEffect(() => {
- getItem(products[1])
-    .then((res) => {
-    setProduct(res);
-    setLoading(false);
-  })
-}, [])
+  useEffect(() => {
+    const prodCollection = collection(db, "products");
+    const refDoc = doc(prodCollection, IdProduc);
+    getDoc(refDoc)
+      .then((result) => {
+        setProduct(
+          {
+            id: result.id,
+            ...result.data(),
+          });
+      })
+      .catch(() => {
+        setError(true)
+      })
+      .finally(() => {
+        setLoading(false)
+        console.log(product)
+      })
 
-return (
-  <ItemsCont>
-  {
-  loading  ?
-  <Spinner/> 
-  :  
-  <ItemDetail product={product} />
-  }
-</ItemsCont>
-)
+  }, [IdProduc]);
+
+  return (
+    <ItemsCont>
+      {
+        loading ?
+          <Spinner />
+          :
+          <ItemDetail product={product} />
+      }
+    </ItemsCont>
+  )
 }
 
 export default ItemDetailContainer

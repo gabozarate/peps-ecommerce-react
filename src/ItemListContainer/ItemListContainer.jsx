@@ -5,31 +5,58 @@ import { products } from '../assests/products'
 import { customFetch } from '../assests/utils/customFetch'
 import { Spinner } from '../components/spinner/spinner'
 import { useParams } from 'react-router-dom'
-
+import { db } from '../../src/components/firebase/firebase'
+import { getDocs, collection, query, where } from 'firebase/firestore'
+import { Category } from '@mui/icons-material'
 
 
 
 const ItemListContainer = ({ greeting }) => {
 
   let { IdCateg } = useParams();
+  const [listProducts, setListProduts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [ error, setError] = useState(false);
 
-  const [listProducts, setListProduts] = useState([])
-  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    customFetch(products)
-      .then(res => {
-        setListProduts(res);
-        setLoading(false)
-        if (IdCateg) {
-          const categories = products.filter(products => products.category === IdCateg)
-          setListProduts(categories)
-        }
-        else {
-          setListProduts(products)
+    const prodCollection = collection(db, 'products');
+
+    const categories = query(prodCollection, where('category', '==', `${IdCateg}`))
+    let url = (IdCateg === undefined ? prodCollection : categories)
+    getDocs (url)
+    .then((data)=>{
+      const list = data.docs.map((product) => {
+        return {
+          ...product.data(),
+          id: product.id
         }
       })
-  }, [IdCateg])
+      setListProduts(list)
+    })
+    .catch(()=> {
+      setError(true);
+    })
+    .finally(()=>{
+      setLoading(false)
+    })
+
+
+
+
+    // customFetch(products)
+    //   .then(res => {
+    //     setListProduts(res);
+    //     setLoading(false)
+    //     if (IdCateg) {
+    //       const categories = products.filter(products => products.category === IdCateg)
+    //       setListProduts(categories)
+    //     }
+    //     else {
+    //       setListProduts(products)
+    //     }
+    //   })
+  })
 
   return (
     <>
