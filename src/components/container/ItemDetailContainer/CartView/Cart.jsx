@@ -35,7 +35,9 @@ export const Cart = () => {
         : 
         <TotalInfo>
                 <h2>Precio total: ${totalPrice()}</h2>
-                <button onClick={clear}>VACIAR CARRITO</button>
+                <button >FINALIZAR COMPRA</button>
+                <button onClick={clear}>vaciar carrito</button>
+
         </TotalInfo>
       }
     </>
@@ -99,6 +101,7 @@ h4{
 }
 button{
     margin: auto;
+    margin-top: 2rem;
     padding: 5px;
     background-color: #C65D7B;
     border: 1px solid black;
@@ -133,6 +136,7 @@ h2{
   width: 50%;
   padding-left: 1rem;
   padding-right: 2rem;
+  font-size: 2rem;
   color: #F6E7D8;
   background-color: #C65D7B;
   border: #874356 2px solid ;
@@ -140,6 +144,7 @@ h2{
 }
 button{
   margin: auto;
+  margin-top: 1rem;
     padding: 5px;
     background-color: #C65D7B;
     border: 1px solid black;
